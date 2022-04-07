@@ -17,7 +17,7 @@ void createArray(struct myArray* a, int tsize,int usize ){
 void display(struct myArray *arr){
    for(int i=0;i< arr->used_size;i++)
    {
-      printf("%d\n",(arr->ptr)[i]);  
+      printf("%d no. Element in array is %d\n",(i+1),(arr->ptr)[i]);  
 
    }
 }
@@ -35,10 +35,14 @@ void setVal(struct myArray *arrSiz){
 
 int main(){
    struct myArray marks;
-   createArray(&marks, 10, 5);
+   int ts,us;
+   printf("Enter total size:");
+   scanf("%d",&ts);
+   printf("Enter used size:");
+   scanf("%d",&us);
+   createArray(&marks, ts, us);
    setVal(&marks);
    display(&marks);
    
-
    return 0;
 }
